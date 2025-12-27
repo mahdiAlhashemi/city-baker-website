@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Readex+Pro:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #78BE20;
+  --color-primary-dark: #5a9e10;
+  --color-secondary: #8B4513;
+  --color-accent: #D4A574;
+  --color-warm: #FEF7ED;
+  --color-dark: #1C1410;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Cairo', 'Readex Pro', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+[dir="ltr"] body {
+  font-family: 'Poppins', 'DM Sans', sans-serif;
+}
+
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4 {
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+[dir="rtl"] p, [dir="rtl"] span, [dir="rtl"] a {
+  font-family: 'Readex Pro', 'Cairo', sans-serif;
+  line-height: 1.9;
+}
+
+.gradient-hero {
+  background: linear-gradient(135deg, #1C1410 0%, #3D2317 50%, #5D3A1A 100%);
+}
+
+.gradient-warm {
+  background: linear-gradient(135deg, #78BE20 0%, #5a9e10 100%);
+}
+
+.gradient-brown {
+  background: linear-gradient(135deg, #8B4513 0%, #5D3A1A 100%);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #78BE20 0%, #D4A574 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(2deg); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-scale {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.card-hover {
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 30px 60px rgba(120, 190, 32, 0.15);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #78BE20 0%, #5a9e10 100%);
+  color: white;
+  padding: 16px 40px;
+  border-radius: 50px;
+  font-weight: 700;
+  transition: all 0.4s ease;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 20px rgba(120, 190, 32, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(120, 190, 32, 0.4);
+}
+
+.btn-secondary {
+  border: 2px solid #78BE20;
+  color: #78BE20;
+  padding: 14px 38px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.4s ease;
+  background: transparent;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: #78BE20;
+  color: white;
+}
+
+.btn-white {
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  color: white;
+  padding: 14px 38px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.4s ease;
+  background: transparent;
+  cursor: pointer;
+}
+
+.btn-white:hover {
+  background: white;
+  color: #1C1410;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #78716c;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.img-cover {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.pattern-dots {
+  background-image: radial-gradient(#78BE20 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1C1410;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #78BE20, #5a9e10);
+  border-radius: 5px;
+}
+
+::selection {
+  background: rgba(120, 190, 32, 0.3);
+  color: #1C1410;
+}
